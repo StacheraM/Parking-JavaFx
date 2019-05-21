@@ -11,7 +11,7 @@ import java.util.Queue;
 public class Controller {
     sample.ProgressBar progressBar0 = new sample.ProgressBar();
     Queue<Object> queue = new LinkedList<>();
-    Parking parking = new Parking(2, 0, queue, progressBar0);
+    Parking parking = new Parking(4, 2, queue, progressBar0);
     RandomValue randomValue = new RandomValue();
 
 
@@ -25,8 +25,8 @@ public class Controller {
 
     @FXML
     public void initialize() {
-        progressBarN1.progressProperty().bind(progressBar0.progressProperty());
-        parking.setNormalParkingSpace(2);
+        //progressBarN1.progressProperty().bind(progressBar0.progressProperty());
+       // parking.setNormalParkingSpace(2);
         parking.normalParkingSpaceProperty().addListener((obs,oldStatus,newStatus)->Platform.runLater(()->normalParkingSpace.setText(newStatus.toString())));
         parking.carLenghtInQueueProperty().addListener((obs,oldStatus,newStatus)->Platform.runLater(()->carInQueue.setText(newStatus.toString())));
 

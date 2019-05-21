@@ -97,7 +97,6 @@ public class Parking {
                         showQueue();
                         queue.remove();
                         carLenghtInQueue.set(queue.size());
-
                         notifyAll();
                         i = parkingSpace;
                         exit = true;
